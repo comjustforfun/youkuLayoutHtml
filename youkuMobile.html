@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>youkuMianPage</title>
+	<script src="BaseJs/adaptive.js" type="text/javascript" ></script>
+	<script src="BaseJs/jquery.min.js" type="text/javascript" ></script>
+	<script src="js/main.js" type="text/javascript" ></script>
+	<link rel="stylesheet" type="text/css" href="css/swiper.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+
+	<script>
+    window['adaptive'].desinWidth = 750;// 设计图宽度
+    window['adaptive'].baseFont = 100;// 没有缩放时的字体大小
+    window['adaptive'].maxWidth = 375;// 页面最大宽度 默认540
+    window['adaptive'].init();// 调用初始化方法
+</script>
+<style type="text/css" media="screen">
+
+	@font-face {
+		font-family: 'iconfont';
+		src:url('iconfont/iconfont.ttf') format('truetype'), 
+		url('iconfont/iconfont.svg#iconfont') format('svg');
+	}
+	html{
+		font-size: 100px  !important;
+	}
+	.iconfont{
+		font-family:"iconfont" !important;
+		font-size:16px;font-style:normal;
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-stroke-width: 0.2px;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	
+	body{
+		background: white;
+		overflow-y: scroll;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	li{
+		list-style: none;	
+	}
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	.select{
+		color: blue;
+	}
+
+	.container{
+		width: 100%;
+	}
+
+	header{
+		height: 3rem;
+		width: 100%;
+		background: red;
+	}
+
+	content{
+		overflow-y: scroll;
+
+	}
+
+	.title{
+		border-bottom: 0.05rem solid  gray;
+	}
+
+	.title h2{
+		display: flex;
+		line-height: 0.4rem;
+		height: 0.4rem;
+	}
+
+	.title .des{
+		flex: 1;
+	}
+
+	html{
+		font-size: 16px;
+	}
+
+	.font{
+		font-size: 0.16rem;
+	}
+
+	.show_taial li{
+		float: right;
+	}
+
+	.show_taial li.play{
+		float: left;
+	}
+
+	.show_taial:after{
+		content:".";
+		clear:both;
+		display:block;
+		height:0;
+		overflow:hidden;
+		visibility:hidden;
+	}
+	.show_taial li{
+		margin-left: 20px;
+		font-size: 16px;
+	}
+
+	.show_taial{
+		margin-top: 0.2rem;
+		margin-bottom: 0.2rem;
+	}
+	.show_taial .share{
+		margin-left: 0.1rem;
+	}
+	.show_taial li.li_share{
+		margin-right: 0.2rem;
+	}
+
+	.introduce{
+		display: flex;
+		border-bottom: 0.05rem solid  gray;
+		padding-bottom: 0.1rem;
+	}
+
+	.introduce  li:nth-of-type(1){
+		flex: 1;
+		margin-left: 0.1rem;
+	}
+
+	.introduce  li:nth-of-type(2){
+		flex: 8;
+	}
+
+	.introduce  li:nth-of-type(3){
+		flex: 2;
+	}
+
+	.introduce  li:nth-of-type(3) p{
+		line-height: 0.5rem;
+		color: white;
+	}
+	.read a{
+		color: white;
+		font-size: 0.16rem;
+	}
+
+	.read{
+		background: blue;
+		border-radius: 10px;
+		text-align: center;
+		line-height: 0.2rem;
+		margin-right: 0.2rem;
+		line-height: 0.3rem;
+	}
+	.introduce p,.introduce li{
+		font-size: 0.16rem;
+		line-height: 0.3rem;
+	}
+	.introduce{
+		margin-top: 0.2rem;
+	}
+
+	.headimg img{
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 50%;
+	}
+
+	.choicePage{
+		display: flex;
+		margin-top: 0.2rem;
+		padding-bottom: 0.2rem;
+		border-bottom: 0.1rem solid  gray;
+	}
+
+	.choicePage p,.choicePage a,.choicePage span,.choicePage li{
+		font-size: 0.16rem;
+	}
+
+	.choicePage li:nth-of-type(1){
+		flex: 7;
+	}
+
+	.choicePage li:nth-of-type(2){
+		flex: 2;
+	}
+
+	.update_time{
+		margin-right: 0.1rem;
+	}
+
+	a.more{
+		font-size: 0.2rem;
+	}
+
+	.cut_line{
+		width: 0.02rem;
+		height: 0.1rem;
+		display: inline-block;
+		background: blue;
+	}
+
+	.sw li{
+		font-size: 0.16rem;
+	}
+
+	dt img{
+		width: 50px;
+		height: 50px;
+		border-radius: 25px;
+	}
+	
+	footer{
+		margin-top: 0.2rem;
+		padding-bottom: 0.1rem;
+		border-bottom: 0.01rem solid gray;
+
+	}
+
+	footer .imgContainer,footer div{
+		float: left;
+		height: 1rem;
+		/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+	}
+	footer div p{
+		font-size: 0.16rem;
+	}
+	footer p img{
+		width: 100%;
+		height: 100%;
+	}
+
+	footer:after{
+		content:".";
+		clear:both;
+		display:block;
+		height:0;
+		overflow:hidden;
+		visibility:hidden;
+	}
+
+	footer p.imgContainer{
+		width: 1.5rem;
+		height: 1rem;
+		/*------------------------------------------------------------------------------------------------------------------------*/
+	}
+	footer div{
+		display: flex;
+		flex-direction: column;
+		width: 2rem;
+		margin-left: 0.1rem;
+	}
+
+	.video_title p{
+		-webkit-flex:1;
+		flex: 1;
+	}
+
+	.video_title p:nth-of-type(1){
+		margin-top: 0.1rem;
+	}
+</style>
+
+
+</head>
+<body>
+
+	<div class="container">
+		<header>
+
+		</header>
+
+		<content>
+			
+			<div class="title">
+				<h2><span  class="des font">Flower sister Chinese second</span><i class="font">></i> </h2>
+				<ul class="show_taial">
+					<li class="play"><i class="iconfont">&#xe631;</i><span class="share">sharePreference</span></li>
+					<li  class="li_share"><i class="iconfont">&#xe631;</i></li>
+					<li><i class="iconfont">&#xe640;</i></li>
+					<li ><i class="iconfont">&#xe639;</i></li>
+				</ul>
+			</div>
+
+		</content>
+		
+		<ul class="introduce">
+			<li class="headimg">
+				<img src="img/head.png" alt="">
+			</li>
+			<li>
+				<p>
+					flower sister
+				</p>
+				<p>
+					7.7millons read
+				</p>
+			</li>
+			<li>
+				<p class="read">
+					<a href=""> +read</a>
+				</p>
+			</li>
+		</ul>
+
+		<ul class="choicePage">
+			<li>
+				<p><span class="cut_line"></span><span> choicePage</span></p>
+			</li>
+			<li>
+				<span class="update_time">updateto</span>
+				<a href="" class="more">></a>
+			</li>
+		</ul>
+		<!-- Swiper -->
+		<div class="swiper-container" style="border-bottom: 0.1rem solid gray">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+
+				<div class="swiper-slide">	
+					<ul class="sw">
+						<li>sister</li>
+						<li>160514</li>
+						<li>icon 1.6milion</li>
+					</ul>
+				</div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+
+
+				<!-- Swiper -->
+		<div class="swiper-container" style="border-bottom: 0.1rem solid gray">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+
+				<div class="swiper-slide">	
+					<dl>
+						<dt><img src="img/head.png" alt=""></dt>
+						<dd>huiyuan</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+
+
+			<ul class="choicePage">
+			<li>
+				<p><span class="cut_line"></span><span> flower</span></p>
+			</li>
+			<li>
+				<span class="update_time">updateto</span>
+				<a href="" class="more">></a>
+			</li>
+		</ul>
+
+		<footer>
+			<p class="imgContainer"><img src="img/head.png" alt=""></p>
+			<div class="video_title">
+				<p>first</p>
+				<p>secong</p>
+				<p>third</p>
+			</div>
+		</footer>
+
+			<footer>
+			<p class="imgContainer"><img src="img/head.png" alt=""></p>
+			<div class="video_title">
+				<p>first</p>
+				<p>secong</p>
+				<p>third</p>
+			</div>
+		</footer>
+
+			<footer>
+			<p class="imgContainer"><img src="img/head.png" alt=""></p>
+			<div class="video_title">
+				<p>first</p>
+				<p>secong</p>
+				<p>third</p>
+			</div>
+		</footer>
+
+			<footer>
+			<p class="imgContainer"><img src="img/head.png" alt=""></p>
+			<div class="video_title">
+				<p>first</p>
+				<p>secong</p>
+				<p>third</p>
+			</div>
+		</footer>
+
+			<footer>
+			<p class="imgContainer"><img src="img/head.png" alt=""></p>
+			<div class="video_title">
+				<p>first</p>
+				<p>secong</p>
+				<p>third</p>
+			</div>
+		</footer>
+
+
+		<!-- Swiper JS -->
+		<script src="js/swiper.min.js"></script>
+		
+
+	</div>
+	<!-- Initialize Swiper -->
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 5,
+			paginationClickable: true,
+			spaceBetween: 0,
+			freeMode: true
+		});
+	</script>
+</body>
+</html>
